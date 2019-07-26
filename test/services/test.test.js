@@ -22,8 +22,8 @@ describe('\'test\' service', () => {
   });
   it('Delete data, should return 200', async () => {
     if (id === -1) throw new Error('ID is not set');
-    const result = await app.service('test').remove(id);
+    const result = app.service('test').remove(id);
 
-    expect(result).to.be.fulfilled;
+    await expect(result).to.be.fulfilled;
   });
 });
